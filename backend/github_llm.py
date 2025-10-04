@@ -5,13 +5,28 @@ from typing import Generator
 
 class GitHubModelsLLM:
     """
-    Custom wrapper for GitHub Models API.
+    Custom wrapper for OpenAI API (fallback from GitHub Models).
     """
     def __init__(self):
-        self.api_key = os.getenv("GITHUB_API_KEY")
-        self.model = "gpt-4o-mini"  # GitHub Models supported model
-        # GitHub Models API endpoint
-        self.api_url = "https://models.inference.ai.azure.com/chat/completions"
+        # Try GitHub Models first, fallback to OpenAI
+        self.github_key = os.getenv("GITHUB_API_KEY")
+        self.openai_key = os.getenv("OPENAI_API_KEY")
+        
+        if self.github_key and self.github_key != "your_github_api_key" and self.github_key.strip():
+            self.api_key = self.github_key
+            self.api_url = "https://models.inference.ai.azure.com/chat/completions"
+            self.model = "gpt-4o-mini"
+            self.provider = "github"
+        elif self.openai_key and self.openai_key != "your_openai_api_key" and self.openai_key.strip():
+            self.api_key = self.openai_key
+            self.api_url = "https://api.openai.com/v1/chat/completions"
+            self.model = "gpt-4o-mini"
+            self.provider = "openai"
+        else:
+            self.api_key = None
+            self.provider = None
+            print("⚠️  WARNING: No API key configured!")
+            print("   Please set either GITHUB_API_KEY or OPENAI_API_KEY in backend/.env")
 
     def generate(self, context: str, question: str) -> str:
         """Generate response using GitHub Models API"""
@@ -38,32 +53,55 @@ Please provide a clear and accurate answer based on the context provided."""
             "temperature": 0.2,
         }
         
+        if not self.api_key:
+            return """🔑 **No API Key Configured**
+            
+**To use this RAG application, you need either:**
+
+**Option 1 - OpenAI API (Recommended - Works Immediately):**
+1. Go to https://platform.openai.com/api-keys
+2. Create a new API key
+3. Add to `/backend/.env`: `OPENAI_API_KEY=your_openai_key_here`
+
+**Option 2 - GitHub Models (Requires Special Access):**
+1. Request access at https://github.com/marketplace/models
+2. Wait for approval (can take days)
+3. Create token with `models` scope
+4. Add to `/backend/.env`: `GITHUB_API_KEY=your_github_key_here`
+
+**Your question**: "{question}"
+**Document content available**: {len(context)} characters"""
+
         try:
             resp = requests.post(self.api_url, json=payload, headers=headers)
             resp.raise_for_status()
             return resp.json().get("choices", [{}])[0].get("message", {}).get("content", "").strip()
-        except Exception as e:
-            # Fallback response when GitHub Models API is not accessible
-            if "unauthorized" in str(e).lower() or "models" in str(e).lower():
-                return f"""Based on the context provided, I can see this is about a RAG (Retrieval-Augmented Generation) system. 
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 401:
+                if self.provider == "github":
+                    return f"""🔑 **GitHub Models Access Required**
 
-From the uploaded document, the key features mentioned include:
+Your GitHub token doesn't have access to GitHub Models. 
 
-- **Document upload and processing** - The system can ingest various document formats
-- **Vector embeddings using HuggingFace sentence-transformers** - Documents are converted to searchable vectors
-- **Semantic search and retrieval** - Users can find relevant information through semantic search
-- **Chat interface with GitHub Models LLM** - Interactive chat functionality 
-- **User authentication and role-based access** - Secure user management
-- **ChromaDB for vector storage** - Persistent vector database for document embeddings
-- **FastAPI backend and React frontend** - Modern web application architecture
-- **MongoDB for chat history** - Conversation persistence
-- **JWT authentication** - Secure token-based authentication
+**Quick Fix - Use OpenAI instead:**
+1. Get an OpenAI API key from https://platform.openai.com/api-keys
+2. Add to `/backend/.env`: `OPENAI_API_KEY=your_key_here`
+3. Restart the app
 
-The RAG system combines retrieval of relevant document chunks with generation capabilities to provide contextual answers to user questions.
+**Or request GitHub Models access:**
+1. Go to https://github.com/marketplace/models
+2. Request access and wait for approval
 
-Note: GitHub Models API requires proper token permissions to function. Please ensure your GitHub personal access token has the 'models' scope enabled."""
+**Your question**: "{question}"
+**Documents**: {len(context)} characters available"""
+                else:
+                    return f"OpenAI API authentication failed. Please check your API key."
             else:
-                return f"Error: {str(e)}"
+                return f"API Error ({e.response.status_code}): {str(e)}"
+        except Exception as e:
+            if not context or context.strip() == "Empty store":
+                return "I don't have any uploaded documents to reference. Please upload a document first, then ask your question."
+            return f"Unexpected error: {str(e)}"
 
     def generate_stream(self, context: str, question: str) -> Generator[str, None, None]:
         """Generate streaming response (simplified implementation)"""

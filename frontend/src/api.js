@@ -65,6 +65,20 @@ export const login = async (username, password) => {
   return response.data;
 };
 
+export const signup = async (username, password) => {
+  const formData = new URLSearchParams();
+  formData.append("username", username);
+  formData.append("password", password);
+  
+  const response = await api.post("/signup", formData, {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
+  
+  return response.data;
+};
+
 export const logout = () => {
   setAuthToken(null);
 };
@@ -149,6 +163,12 @@ export const getUserProfile = async () => {
 
 export const getRateLimitStatus = async () => {
   const response = await api.get("/rate-limit");
+  return response.data;
+};
+
+// Documents functions
+export const getDocuments = async () => {
+  const response = await api.get("/documents");
   return response.data;
 };
 

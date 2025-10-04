@@ -45,12 +45,14 @@ start_backend() {
     print_status "Starting backend server..."
     cd backend
     
-    # Check if uvicorn is available
-    if ! command -v uvicorn &> /dev/null; then
-        print_error "uvicorn not found. Please install it with: pip install uvicorn"
+    # Check if virtual environment exists
+    if [ ! -d "venv" ]; then
+        print_error "Virtual environment not found. Please run setup first."
         exit 1
     fi
     
+    # Activate virtual environment and start server
+    source venv/bin/activate
     uvicorn main:app --reload --host 0.0.0.0 --port 8000 &
     BACKEND_PID=$!
     cd ..

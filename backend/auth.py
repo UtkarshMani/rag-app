@@ -46,6 +46,19 @@ def get_password_hash(password: str) -> str:
     """Hash a password"""
     return pwd_context.hash(password)
 
+def create_user(username: str, password: str, full_name: str, role: str = "user") -> bool:
+    """Create a new user"""
+    if username in fake_users_db:
+        return False  # User already exists
+    
+    fake_users_db[username] = {
+        "username": username,
+        "hashed_password": get_password_hash(password),
+        "role": role,
+        "full_name": full_name
+    }
+    return True
+
 def get_user(username: str) -> Optional[UserInDB]:
     """Get user from database"""
     if username in fake_users_db:

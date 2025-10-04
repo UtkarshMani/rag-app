@@ -97,3 +97,26 @@ def get_retriever():
         )
         save_vector_store(store)
     return store.as_retriever(search_kwargs={"k": 3})
+
+def get_document_list():
+    """Get list of all documents in the vector store"""
+    try:
+        store = get_vector_store()
+        if store is None:
+            return []
+        
+        # Get all documents from the collection
+        collection = store._collection
+        results = collection.get()
+        
+        # Extract unique source documents
+        sources = set()
+        if results and 'metadatas' in results:
+            for metadata in results['metadatas']:
+                if metadata and 'source' in metadata and metadata['source'] != 'system':
+                    sources.add(metadata['source'])
+        
+        return list(sources)
+    except Exception as e:
+        print(f"Error getting document list: {e}")
+        return []

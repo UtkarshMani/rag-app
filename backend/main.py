@@ -12,7 +12,7 @@ import asyncio
 # Import our modules
 from github_llm import GitHubModelsLLM
 from vector_store import ingest_document, get_retriever
-from auth import authenticate_user, create_access_token, get_current_user, User, RoleChecker
+from auth import authenticate_user, create_access_token, get_current_user, User, RoleChecker, create_user
 from chat_history import save_chat, get_chat_history, get_recent_conversations
 from rate_limit import rate_limiter, get_rate_limit_info
 from models import ChatRequest, ChatResponse
@@ -69,6 +69,42 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
+@app.post("/signup")
+async def signup(form_data: OAuth2PasswordRequestForm = Depends()):
+    """Signup endpoint to create a new user account"""
+    # Check if user already exists
+    if form_data.username in ["admin", "user"]:  # Reserved usernames
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Username is reserved. Please choose a different username."
+        )
+    
+    # Create the user (default role is "user")
+    success = create_user(
+        username=form_data.username,
+        password=form_data.password,
+        full_name=form_data.username.title(),  # Use username as full name by default
+        role="user"
+    )
+    
+    if not success:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Username already exists. Please choose a different username."
+        )
+    
+    # Automatically log in the new user
+    user = authenticate_user(form_data.username, form_data.password)
+    access_token = create_access_token(
+        data={"sub": user.username, "role": user.role}
+    )
+    
+    return {
+        "access_token": access_token, 
+        "token_type": "bearer",
+        "message": "Account created successfully!"
+    }
+
 @app.post("/ingest")
 async def ingest(
     file: UploadFile = File(...),
@@ -96,6 +132,18 @@ async def ingest(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error ingesting document: {str(e)}")
 
+@app.get("/documents")
+async def get_documents(
+    current_user: User = Depends(get_current_user)
+):
+    """Get list of ingested documents"""
+    try:
+        from vector_store import get_document_list
+        documents = get_document_list()
+        return {"documents": documents}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error retrieving documents: {str(e)}")
+
 @app.post("/chat", response_model=ChatResponse)
 async def chat(
     req: ChatRequest,
@@ -107,8 +155,16 @@ async def chat(
         retriever = get_retriever()
         docs = retriever.get_relevant_documents(req.question)
         
+        # Debug: print retrieved documents info
+        print(f"Retrieved {len(docs)} documents for question: {req.question}")
+        for i, doc in enumerate(docs):
+            print(f"Doc {i}: Source={doc.metadata.get('source', 'unknown')}, Content preview={doc.page_content[:100]}...")
+        
         # Combine context from retrieved documents
         context = "\n\n".join([doc.page_content for doc in docs])
+        
+        # Debug: print context length
+        print(f"Total context length: {len(context)} characters")
         
         # Generate response using GitHub Models LLM
         llm = GitHubModelsLLM()
@@ -120,6 +176,7 @@ async def chat(
         return ChatResponse(answer=answer)
     
     except Exception as e:
+        print(f"Chat error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error generating response: {str(e)}")
 
 @app.post("/chat/stream")
