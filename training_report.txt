@@ -1,0 +1,731 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black,
+    pdfborder={0 0 0}
+}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Code formatting setup
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=none,                    
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    xleftmargin=0.5cm,
+    xrightmargin=0.5cm
+}
+
+\lstset{style=mystyle}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Training Report - AI Internship}
+\fancyhead[R]{National Informatics Centre}
+\fancyfoot[C]{\thepage}
+
+% Title formatting
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\bfseries Training Report on}\\[0.5cm]
+    {\Huge\bfseries Artificial Intelligence and Large Language Models}\\[2cm]
+    
+    {\Large Submitted to}\\[0.5cm]
+    {\large\bfseries National Informatics Centre}\\[1cm]
+    
+    {\Large Submitted by}\\[0.5cm]
+    {\large\bfseries Utkarsh Mani Tripathi}\\[0.3cm]
+    {\large En. No. 2021IMSCS021}\\[0.3cm]
+    {\large Central University of Rajasthan}\\[2cm]
+    
+    {\Large Training Period}\\[0.5cm]
+    {\large 11/06/2025 - 10/08/2025 (8 weeks)}\\[1cm]
+    
+    {\Large Mode of Training}\\[0.5cm]
+    {\large Remote}\\[2cm]
+    
+    \vfill
+    {\large\today}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\subsection{Objective of the Training}
+The primary objective of this AI internship training was to explore and gain hands-on experience in advanced artificial intelligence technologies, specifically focusing on:
+\begin{itemize}
+    \item Applied Large Language Models (LLMs)
+    \item Retrieval-Augmented Generation (RAG) systems
+    \item LangChain framework implementation
+    \item Advanced prompt engineering techniques
+    \item Integration of AI models with modern applications
+\end{itemize}
+
+The training aimed to provide comprehensive understanding of cutting-edge AI technologies and their practical applications in real-world scenarios.
+
+\subsection{Duration and Location}
+\begin{itemize}
+    \item \textbf{Duration:} 8 weeks (11/06/2025 - 10/08/2025)
+    \item \textbf{Location:} Remote
+    \item \textbf{Organization:} National Informatics Centre (NIC)
+    \item \textbf{Mode:} Virtual/Online Training Program
+\end{itemize}
+
+\subsection{Participants}
+This training program was conducted as part of the AI Internship program at National Informatics Centre, involving interns from various technical backgrounds focusing on artificial intelligence and machine learning applications.
+
+\section{Training Content}
+
+\subsection{Topics Covered}
+The comprehensive training program covered the following key areas:
+
+\subsubsection{Large Language Models (LLMs)}
+\begin{itemize}
+    \item Fundamentals of transformer architecture
+    \item Pre-training and fine-tuning methodologies
+    \item Model deployment strategies
+    \item Performance optimization techniques
+\end{itemize}
+
+\subsubsection{Retrieval-Augmented Generation (RAG)}
+\begin{itemize}
+    \item RAG architecture and components
+    \item Vector databases integration
+    \item Embedding models and their applications
+    \item Document retrieval and ranking systems
+\end{itemize}
+
+\subsubsection{LangChain Framework}
+\begin{itemize}
+    \item LangChain fundamentals and ecosystem
+    \item Chain composition and orchestration
+    \item Memory management in conversational AI
+    \item Custom tool integration
+\end{itemize}
+
+\subsubsection{Advanced AI Tools and Platforms}
+\begin{itemize}
+    \item GitHub Copilot integration and customization
+    \item OpenAI API utilization
+    \item Vector database management
+    \item Offline model deployment using Ollama and LM Studio
+\end{itemize}
+
+\subsubsection{Prompt Engineering Techniques}
+\begin{itemize}
+    \item Few-Shot learning approaches
+    \item Chain-of-Thought (CoT) reasoning
+    \item Tree-of-Thought (ToT) methodology
+    \item ReAct (Reasoning and Acting) framework
+\end{itemize}
+
+\subsubsection{State-of-the-Art Models}
+\begin{itemize}
+    \item ChatGPT implementation and optimization
+    \item Qwen 2.5 model deployment
+    \item Mistral model integration
+    \item Comparative analysis of different models
+\end{itemize}
+
+\subsection{Training Methods}
+The training employed a diverse range of methodologies:
+\begin{itemize}
+    \item \textbf{Online Lectures:} Theoretical foundations from Microsoft Reactor and DeepLearning.AI
+    \item \textbf{Hands-on Workshops:} Practical implementation sessions
+    \item \textbf{Project-based Learning:} Real-world application development
+    \item \textbf{Self-paced Learning:} Applied LLMs Mastery coursework
+    \item \textbf{Interactive Sessions:} Live demonstrations and Q\&A sessions
+\end{itemize}
+
+\section{Training Schedule}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{2cm}|p{2cm}|p{6cm}|p{3cm}|}
+\hline
+\textbf{Week} & \textbf{Duration} & \textbf{Topic} & \textbf{Training Source} \\
+\hline
+Week 1 & 11-17 June 2025 & LLM Fundamentals and Architecture & Microsoft Reactor \\
+\hline
+Week 2 & 18-24 June 2025 & RAG Systems Implementation & DeepLearning.AI \\
+\hline
+Week 3 & 25 June - 1 July 2025 & LangChain Framework Deep Dive & Applied LLMs Mastery \\
+\hline
+Week 4 & 2-8 July 2025 & Prompt Engineering Techniques & Hands-on Practice \\
+\hline
+Week 5 & 9-15 July 2025 & GitHub Copilot Integration & Microsoft Resources \\
+\hline
+Week 6 & 16-22 July 2025 & Vector Databases and Embeddings & Practical Implementation \\
+\hline
+Week 7 & 23-29 July 2025 & Model Deployment (Ollama, LM Studio) & Self-directed Learning \\
+\hline
+Week 8 & 30 July - 10 Aug 2025 & Advanced Model Implementation \& Project Development & Project Work \\
+\hline
+\end{tabular}
+\caption{8-Week Training Schedule}
+\end{table}
+
+\section{Key Learnings}
+
+\subsection{Summary of Important Points}
+Through this comprehensive training program, several critical insights and learnings were acquired:
+
+\subsubsection{Technical Proficiency}
+\begin{itemize}
+    \item Mastered the implementation of RAG systems for enhanced information retrieval
+    \item Developed expertise in prompt engineering for optimal LLM performance
+    \item Gained proficiency in deploying and managing large language models offline
+    \item Learned to integrate multiple AI tools and frameworks seamlessly
+\end{itemize}
+
+\subsubsection{Practical Applications}
+\begin{itemize}
+    \item Understanding of real-world AI application development
+    \item Experience with production-ready AI system deployment
+    \item Knowledge of scalability considerations for AI applications
+    \item Insight into user experience optimization for AI-powered tools
+\end{itemize}
+
+\subsubsection{Industry Best Practices}
+\begin{itemize}
+    \item Model selection criteria for different use cases
+    \item Performance optimization strategies
+    \item Security considerations in AI application development
+    \item Cost-effective deployment methodologies
+\end{itemize}
+
+\subsection{Skills Acquired}
+The training program resulted in the acquisition of the following technical and professional skills:
+
+\subsubsection{Technical Skills}
+\begin{itemize}
+    \item \textbf{Programming:} Advanced Python programming for AI applications
+    \item \textbf{Frameworks:} LangChain, OpenAI API, vector database integration
+    \item \textbf{Tools:} GitHub Copilot, Ollama, LM Studio, various embedding models
+    \item \textbf{Deployment:} Local and cloud-based model deployment strategies
+    \item \textbf{Optimization:} Performance tuning and resource management
+\end{itemize}
+
+\subsubsection{Analytical Skills}
+\begin{itemize}
+    \item Model performance evaluation and comparison
+    \item System architecture design for AI applications
+    \item Problem-solving using advanced reasoning techniques
+    \item Data flow optimization in RAG systems
+\end{itemize}
+
+\subsubsection{Professional Skills}
+\begin{itemize}
+    \item Project management in AI development
+    \item Documentation and knowledge sharing
+    \item Collaborative development practices
+    \item Continuous learning and adaptation
+\end{itemize}
+
+\section{Feedback}
+
+\subsection{Participant Feedback}
+The training program provided an exceptional learning experience with the following highlights:
+\begin{itemize}
+    \item \textbf{Comprehensive Coverage:} The program covered both theoretical foundations and practical applications effectively
+    \item \textbf{Hands-on Experience:} Extensive practical sessions enhanced understanding and retention
+    \item \textbf{Current Technology:} Focus on cutting-edge AI technologies and tools
+    \item \textbf{Flexible Learning:} Remote format allowed for self-paced progression
+    \item \textbf{Resource Quality:} High-quality learning materials from reputable sources
+\end{itemize}
+
+\textbf{Areas for Improvement:}
+\begin{itemize}
+    \item More collaborative projects with other interns
+    \item Additional focus on industry-specific applications
+    \item Regular assessment and feedback sessions
+\end{itemize}
+
+\subsection{Trainer Feedback/Certificate}
+
+\subsubsection{Official Training Certificate}
+The training program culminated in the award of an official certificate from the National Informatics Centre, recognizing successful completion of the AI internship program and demonstrating proficiency in advanced artificial intelligence technologies.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{internship_certificate.jpg}
+\caption{Official Training Certificate - National Informatics Centre AI Internship Program}
+\label{fig:certificate}
+\end{figure}
+
+The certificate validates the comprehensive training received in:
+\begin{itemize}
+    \item Large Language Models implementation and optimization
+    \item Retrieval-Augmented Generation system development
+    \item Advanced prompt engineering techniques
+    \item Production-ready AI application deployment
+    \item Professional development in cutting-edge AI technologies
+\end{itemize}
+
+\subsubsection{Program Outcomes and Recognition}
+The successful completion of this intensive 8-week program resulted in:
+\begin{itemize}
+    \item Certificate of completion from National Informatics Centre
+    \item Performance evaluation from supervising mentors
+    \item Project portfolio assessment with practical AI implementations
+    \item Recommendation for future opportunities in AI development
+    \item Recognition for innovative RAG application development
+\end{itemize}
+
+\section{Conclusion}
+
+\subsection{Overall Assessment}
+The AI internship training at National Informatics Centre has been an exceptionally valuable learning experience. The comprehensive curriculum covering LLMs, RAG systems, and advanced AI tools has provided a solid foundation for a career in artificial intelligence and machine learning.
+
+Key achievements include:
+\begin{itemize}
+    \item Successful completion of multiple AI-related courses from renowned platforms
+    \item Hands-on experience with state-of-the-art AI models and tools
+    \item Development of practical skills in AI application deployment
+    \item Understanding of real-world AI implementation challenges and solutions
+\end{itemize}
+
+The remote training format proved highly effective, allowing for flexible learning while maintaining high standards of education and practical experience.
+
+\subsection{Future Training Recommendations}
+Based on the current training experience, the following recommendations are proposed for future training programs:
+
+\subsubsection{For the Organization}
+\begin{itemize}
+    \item Expand the program to include more collaborative projects
+    \item Introduce industry mentorship components
+    \item Develop specialized tracks for different AI applications
+    \item Create alumni networks for continued learning and collaboration
+\end{itemize}
+
+\subsubsection{For Future Participants}
+\begin{itemize}
+    \item Strong foundation in Python programming is essential
+    \item Basic understanding of machine learning concepts is beneficial
+    \item Commitment to continuous learning is crucial
+    \item Active participation in AI communities enhances the experience
+\end{itemize}
+
+\subsubsection{For Curriculum Enhancement}
+\begin{itemize}
+    \item Include more real-world case studies
+    \item Add modules on AI ethics and responsible development
+    \item Incorporate emerging technologies like multimodal AI
+    \item Develop assessment frameworks for practical skills
+\end{itemize}
+
+\section{Code Implementation Samples}
+
+This section showcases key code implementations from the RAG application project, demonstrating practical application of the concepts learned during the training program.
+
+\subsection{Backend Implementation}
+
+\subsubsection{FastAPI Authentication System}
+The following code demonstrates the JWT-based authentication system implemented using FastAPI:
+
+\begin{lstlisting}[language=Python, caption=JWT Authentication Implementation]
+# auth.py - JWT Authentication Implementation
+from fastapi import HTTPException, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from passlib.context import CryptContext
+import jwt
+from datetime import datetime, timedelta
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+security = HTTPBearer()
+
+def create_access_token(data: dict, expires_delta: timedelta = None):
+    to_encode = data.copy()
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    return encoded_jwt
+
+async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    try:
+        payload = jwt.decode(credentials.credentials, SECRET_KEY, algorithms=[ALGORITHM])
+        email: str = payload.get("sub")
+        if email is None:
+            raise HTTPException(status_code=401, detail="Invalid authentication")
+        return email
+    except jwt.PyJWTError:
+        raise HTTPException(status_code=401, detail="Invalid authentication")
+\end{lstlisting}
+
+\subsubsection{RAG Pipeline Implementation}
+Core RAG functionality with vector search and LLM integration:
+
+\begin{lstlisting}[language=Python, caption=RAG Chat Endpoint Implementation]
+# main.py - RAG Chat Endpoint
+@app.post("/chat")
+async def chat_endpoint(request: ChatRequest, user_email=Depends(get_current_user)):
+    try:
+        # Retrieve relevant documents using vector similarity search
+        relevant_docs = vector_store.similarity_search(
+            request.message, 
+            k=5,
+            filter={"user_email": user_email}
+        )
+        
+        # Prepare context from retrieved documents
+        context = "\n".join([doc.page_content for doc in relevant_docs])
+        
+        # Generate response using GitHub Models
+        response = await github_llm.generate_response(
+            query=request.message,
+            context=context,
+            max_tokens=500
+        )
+        
+        # Store chat history
+        chat_history.add_message(user_email, request.message, response)
+        
+        return {
+            "response": response,
+            "sources": [doc.metadata for doc in relevant_docs],
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Chat error: {e}")
+        raise HTTPException(status_code=500, detail="Processing error")
+\end{lstlisting}
+
+\subsubsection{Vector Store Management}
+ChromaDB integration for document embeddings and similarity search:
+
+\begin{lstlisting}[language=Python, caption=Vector Store and Document Processing]
+# vector_store.py - Document Processing and Vector Operations
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+class VectorStoreManager:
+    def __init__(self):
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+        self.text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=500,
+            chunk_overlap=50
+        )
+        
+    async def process_document(self, file_content: str, filename: str, user_email: str):
+        # Split document into chunks
+        texts = self.text_splitter.split_text(file_content)
+        
+        # Create metadata for each chunk
+        metadatas = [
+            {
+                "filename": filename,
+                "user_email": user_email,
+                "chunk_id": i,
+                "upload_time": datetime.now().isoformat()
+            }
+            for i, _ in enumerate(texts)
+        ]
+        
+        # Add to vector store
+        vector_store = Chroma(
+            persist_directory="./chroma_db",
+            embedding_function=self.embeddings
+        )
+        
+        vector_store.add_texts(texts=texts, metadatas=metadatas)
+        vector_store.persist()
+        
+        return len(texts)
+\end{lstlisting}
+
+\subsection{Frontend Implementation}
+
+\subsubsection{React Authentication Component}
+Modern React component with hooks for user authentication:
+
+\begin{lstlisting}[language=JavaScript, caption=React Authentication with Hooks]
+// App.js - Authentication and Main Application Logic
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const App = () => {
+    const [user, setUser] = useState(null);
+    const [isSignup, setIsSignup] = useState(false);
+    const [credentials, setCredentials] = useState({ email: '', password: '' });
+
+    const handleAuth = async (e) => {
+        e.preventDefault();
+        try {
+            const endpoint = isSignup ? '/signup' : '/login';
+            const response = await axios.post(`http://localhost:8000${endpoint}`, {
+                email: credentials.email,
+                password: credentials.password
+            });
+            
+            if (response.data.access_token) {
+                localStorage.setItem('token', response.data.access_token);
+                setUser({ email: credentials.email });
+                
+                // Set axios default header for future requests
+                axios.defaults.headers.common['Authorization'] = 
+                    `Bearer ${response.data.access_token}`;
+            }
+        } catch (error) {
+            console.error('Authentication failed:', error.response?.data?.detail);
+            alert(error.response?.data?.detail || 'Authentication failed');
+        }
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        delete axios.defaults.headers.common['Authorization'];
+        setUser(null);
+    };
+
+    // Auto-login on app start if token exists
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            // Verify token with backend
+            axios.get('http://localhost:8000/user/profile')
+                .then(response => setUser(response.data))
+                .catch(() => handleLogout());
+        }
+    }, []);
+
+    return (
+        <div className="app">
+            {user ? (
+                <ChatInterface user={user} onLogout={handleLogout} />
+            ) : (
+                <AuthForm 
+                    isSignup={isSignup}
+                    onToggle={() => setIsSignup(!isSignup)}
+                    onSubmit={handleAuth}
+                    credentials={credentials}
+                    setCredentials={setCredentials}
+                />
+            )}
+        </div>
+    );
+};
+\end{lstlisting}
+
+\subsubsection{Chat Interface with Real-time Features}
+Interactive chat component with document upload and conversation management:
+
+\begin{lstlisting}[language=JavaScript, caption=Interactive Chat Component with Real-time Features]
+// Chat component implementation
+const ChatInterface = ({ user, onLogout }) => {
+    const [messages, setMessages] = useState([]);
+    const [input, setInput] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [documents, setDocuments] = useState([]);
+
+    const sendMessage = async () => {
+        if (!input.trim()) return;
+        
+        setIsLoading(true);
+        const userMessage = { type: 'user', content: input, timestamp: new Date() };
+        setMessages(prev => [...prev, userMessage]);
+        
+        try {
+            const response = await axios.post('http://localhost:8000/chat', {
+                message: input
+            });
+            
+            const assistantMessage = {
+                type: 'assistant',
+                content: response.data.response,
+                sources: response.data.sources,
+                timestamp: new Date()
+            };
+            
+            setMessages(prev => [...prev, assistantMessage]);
+        } catch (error) {
+            console.error('Chat error:', error);
+            setMessages(prev => [...prev, {
+                type: 'error',
+                content: 'Sorry, I encountered an error. Please try again.',
+                timestamp: new Date()
+            }]);
+        } finally {
+            setIsLoading(false);
+            setInput('');
+        }
+    };
+
+    const uploadDocument = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        try {
+            await axios.post('http://localhost:8000/upload', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            });
+            
+            // Refresh documents list
+            const docsResponse = await axios.get('http://localhost:8000/documents');
+            setDocuments(docsResponse.data);
+            
+            alert('Document uploaded successfully!');
+        } catch (error) {
+            console.error('Upload error:', error);
+            alert('Failed to upload document');
+        }
+    };
+
+    return (
+        <div className="chat-interface">
+            <div className="messages">
+                {messages.map((msg, idx) => (
+                    <div key={idx} className={`message ${msg.type}`}>
+                        <div className="content">{msg.content}</div>
+                        {msg.sources && (
+                            <div className="sources">
+                                Sources: {msg.sources.map(s => s.filename).join(', ')}
+                            </div>
+                        )}
+                    </div>
+                ))}
+                {isLoading && <div className="loading">AI is thinking...</div>}
+            </div>
+            
+            <div className="input-area">
+                <input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+                    placeholder="Ask me anything about your documents..."
+                />
+                <button onClick={sendMessage} disabled={isLoading}>Send</button>
+            </div>
+        </div>
+    );
+};
+\end{lstlisting}
+
+\subsection{Integration and Deployment}
+
+\subsubsection{Environment Configuration}
+Production-ready configuration management:
+
+\begin{lstlisting}[language=bash, caption=Environment Configuration and Dependencies]
+# .env - Environment Variables
+GITHUB_TOKEN=your_github_models_token
+SECRET_KEY=your_jwt_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# requirements.txt - Python Dependencies
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+langchain==0.0.345
+chromadb==0.4.18
+sentence-transformers==2.2.2
+PyPDF2==3.0.1
+python-docx==0.8.11
+\end{lstlisting}
+
+These code samples demonstrate the practical implementation of advanced AI concepts learned during the training, showcasing production-ready code with proper error handling, security measures, and modern development practices.
+
+\section{Appendices}
+
+\subsection{Appendix A: Course Certificates}
+\begin{itemize}
+    \item Microsoft Reactor - Advanced LLM Applications
+    \item DeepLearning.AI - RAG Systems Implementation
+    \item Applied LLMs Mastery - Comprehensive Program
+\end{itemize}
+
+\subsection{Appendix B: Project Portfolio}
+
+\subsubsection{Major Project: Full-Stack RAG Application}
+The capstone project of this internship was the development of a comprehensive Retrieval-Augmented Generation application featuring:
+\begin{itemize}
+    \item FastAPI backend with JWT authentication system
+    \item React frontend with modern UI/UX design
+    \item ChromaDB vector database integration
+    \item GitHub Models API for LLM responses
+    \item Production-ready deployment architecture
+    \item Comprehensive documentation and testing
+\end{itemize}
+
+\textbf{Project Repository:} \url{https://github.com/UtkarshMani/rag-app}
+
+\subsubsection{Additional Projects and Tools}
+\begin{itemize}
+    \item Multi-model Comparison Framework
+    \item Prompt Engineering Optimization Tool
+    \item Local LLM Deployment Guide using Ollama and LM Studio
+    \item Vector Database Performance Benchmarking
+\end{itemize}
+
+\subsection{Appendix C: Technical Resources}
+\begin{itemize}
+    \item LangChain implementation examples
+    \item Vector database configuration files
+    \item Model deployment scripts
+    \item Performance benchmarking results
+\end{itemize}
+
+\subsection{Appendix D: Learning Materials}
+\begin{itemize}
+    \item Comprehensive notes on LLM architectures
+    \item RAG system design patterns
+    \item Prompt engineering best practices
+    \item Model optimization techniques
+\end{itemize}
+
+\end{document}

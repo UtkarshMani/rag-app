@@ -13,7 +13,8 @@
 10. [Deployment & Configuration](#deployment--configuration)
 11. [Security Implementation](#security-implementation)
 12. [Performance & Scalability](#performance--scalability)
-13. [Troubleshooting](#troubleshooting)
+13. [Visual Documentation](#visual-documentation)
+14. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -629,6 +630,53 @@ npm start
 2. **Memory Issues**: Implement document chunking
 3. **Network Latency**: Add response caching
 4. **UI Lag**: Optimize React rendering
+
+---
+
+## Visual Documentation
+
+### 📸 Application Screenshots & Demo
+
+For comprehensive visual documentation including application screenshots, code examples, and professional credentials, please refer to:
+
+📊 **[Business Project Report](BUSINESS_PROJECT_REPORT.md#visual-documentation--evidence)** - Contains detailed visual documentation including:
+
+- **Professional Credentials**: Internship certificate and professional development evidence
+- **Application Screenshots**: 
+  - Login & Authentication Interface
+  - Main Chat Interface with RAG functionality
+  - Document Upload & Management System
+  - Query Results with Source Citations
+- **Code Implementation Showcase**:
+  - Backend FastAPI implementation
+  - Vector Store integration
+  - Frontend React components
+  - API integration patterns
+- **Performance Metrics**: Real-world benchmarks and system performance data
+
+### 🖼️ Image Directory Structure
+```
+docs/images/
+├── internship_certificate.png
+├── login_page.png
+├── chat_interface.png
+├── document_upload.png
+├── query_results.png
+├── backend_code.png
+├── vector_store_code.png
+├── frontend_code.png
+├── api_integration.png
+└── performance_metrics.png
+```
+
+### 📋 Adding Your Own Images
+
+1. **Place images** in the `docs/images/` directory
+2. **Follow naming conventions** as specified in the image README
+3. **Update references** in documentation files as needed
+4. **Maintain high quality** for presentation purposes
+
+**Note**: The visual documentation provides essential evidence for presentations, reports, and technical discussions.
 
 ---
 
