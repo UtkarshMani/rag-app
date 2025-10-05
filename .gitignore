@@ -18,6 +18,15 @@ var/
 wheels/
 share/python-wheels/
 *.egg-info/
+
+# Netlify
+.netlify/
+netlify-cli-state.json
+
+# Deployment files (keep for reference)
+# Remove if not needed
+Format.txt
+Resume.txt
 .installed.cfg
 *.egg
 MANIFEST

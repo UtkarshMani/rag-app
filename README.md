@@ -2,6 +2,17 @@
 
 A complete Retrieval-Augmented Generation (RAG) application built with FastAPI backend and React frontend, using ChromaDB for vector storage and GitHub Models for LLM integration.
 
+## 🌐 **Live Demo**
+
+**Try the application online before setting it up locally!**
+
+- 🚀 **[Live Demo](https://your-site-name.netlify.app)** - Interactive demo with sample documents
+- 📚 **[API Documentation](https://your-backend-url.herokuapp.com/docs)** - Explore the FastAPI endpoints
+- 📖 **[Demo Guide](DEMO_SETUP.md)** - Instructions for testing the demo
+- 🚀 **[Deployment Guide](NETLIFY_DEPLOYMENT.md)** - Complete Netlify deployment instructions
+
+> **Demo Features:** Upload documents, ask questions, get AI-powered answers with source citations. Perfect for testing before local installation!
+
 ## 🚀 Features
 
 - **Document Upload & Processing**: Support for PDF, TXT, DOCX, and MD files
