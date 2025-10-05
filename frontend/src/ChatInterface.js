@@ -116,7 +116,7 @@ function ChatInterface({ currentChat, onUpdateChat }) {
     setUploadingFile(true);
 
     try {
-      const response = await uploadFile(file);
+      await uploadFile(file);
       
       // Add system message about file upload
       setMessages(prev => [
