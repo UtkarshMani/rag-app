@@ -1,5 +1,8 @@
 # 📁 Complete RAG Application Structure
 
+> **🚀 [LIVE DEMO: Try RAGnaBot](https://ragnabot.netlify.app/) 🚀**
+> Experience the AI-powered document chat in action!
+
 This document provides a comprehensive overview of the RAG (Retrieval-Augmented Generation) application that has been created.
 
 ## 🏗️ Project Architecture

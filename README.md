@@ -1,17 +1,22 @@
 # RAG Application with ChromaDB
 
+> ## 🔥 **[🚀 LIVE DEMO - Try RAGnaBot Now!](https://ragnabot.netlify.app/)** 🔥
+> **Experience AI-powered document chat in your browser - Upload docs, ask questions, get intelligent answers!**
+
 A complete Retrieval-Augmented Generation (RAG) application built with FastAPI backend and React frontend, using ChromaDB for vector storage and GitHub Models for LLM integration.
 
 ## 🌐 **Live Demo**
 
-**Try the application online before setting it up locally!**
+**🚀 [Try RAGnaBot Live](https://ragnabot.netlify.app/) 🚀**
 
-- 🚀 **[Live Demo](https://your-site-name.netlify.app)** - Interactive demo with sample documents
-- 📚 **[API Documentation](https://your-backend-url.herokuapp.com/docs)** - Explore the FastAPI endpoints
+**Experience the RAG chatbot in action - no setup required!**
+
+- 🤖 **[RAGnaBot - Live Demo](https://ragnabot.netlify.app/)** - Interactive AI-powered document chat
+- 📚 **[API Documentation](https://your-backend-url.herokuapp.com/docs)** - Explore the FastAPI endpoints (coming soon)
 - 📖 **[Demo Guide](DEMO_SETUP.md)** - Instructions for testing the demo
 - 🚀 **[Deployment Guide](NETLIFY_DEPLOYMENT.md)** - Complete Netlify deployment instructions
 
-> **Demo Features:** Upload documents, ask questions, get AI-powered answers with source citations. Perfect for testing before local installation!
+> **✨ Demo Features:** Upload documents (PDF, DOCX, TXT), ask questions, get AI-powered answers with source citations. Perfect for testing the RAG capabilities before local installation!
 
 ## 🚀 Features
 

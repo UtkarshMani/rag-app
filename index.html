@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAGnaBot - AI Document Chat</title>
+    <meta name="description" content="Experience RAGnaBot - Upload documents and chat with AI for intelligent answers!">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .demo-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        .features {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .feature {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .redirect-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+    <script>
+        // Auto-redirect after 10 seconds
+        setTimeout(function() {
+            window.location.href = 'https://ragnabot.netlify.app/';
+        }, 10000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 RAGnaBot</h1>
+        <p class="subtitle">AI-Powered Document Chat Assistant</p>
+        
+        <a href="https://ragnabot.netlify.app/" class="demo-button">
+            🚀 Try Live Demo
+        </a>
+        
+        <div class="features">
+            <div class="feature">📄 Upload PDF, DOCX, TXT files</div>
+            <div class="feature">🤖 Chat with AI about your documents</div>
+            <div class="feature">🔍 Get intelligent answers with sources</div>
+            <div class="feature">💬 Real-time streaming responses</div>
+        </div>
+        
+        <p class="redirect-info">
+            Redirecting to live demo in <span id="countdown">10</span> seconds...
+        </p>
+    </div>
+
+    <script>
+        let count = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(function() {
+            count--;
+            countdownElement.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(timer);
+                countdownElement.textContent = '0';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
