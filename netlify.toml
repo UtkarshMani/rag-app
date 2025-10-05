@@ -1,13 +1,13 @@
 # Netlify build configuration
 [build]
   base = "frontend"
-  publish = "frontend/build"
+  publish = "build"
   command = "npm run build"
 
 # Environment variables for frontend
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
 
 # Redirect rules for SPA (Single Page Application)
 [[redirects]]
