@@ -161,6 +161,8 @@ The comprehensive training program covered the following key areas:
     \item Chain-of-Thought (CoT) reasoning
     \item Tree-of-Thought (ToT) methodology
     \item ReAct (Reasoning and Acting) framework
+    \item Advanced techniques from specialized course completion on DeepLearning.AI platform
+    \item Professional-level prompt optimization strategies
 \end{itemize}
 
 \subsubsection{State-of-the-Art Models}
@@ -179,6 +181,9 @@ The training employed a diverse range of methodologies:
     \item \textbf{Project-based Learning:} Real-world application development
     \item \textbf{Self-paced Learning:} Applied LLMs Mastery coursework
     \item \textbf{Interactive Sessions:} Live demonstrations and Q\&A sessions
+    \item \textbf{External Course Completion:} Certified courses from DeepLearning.AI and Kaggle
+    \item \textbf{Research-based Learning:} Academic paper analysis and implementation
+    \item \textbf{Industry Tutorial Integration:} Professional development resources from leading platforms
 \end{itemize}
 
 \section{Training Schedule}
@@ -314,6 +319,68 @@ The successful completion of this intensive 8-week program resulted in:
     \item Project portfolio assessment with practical AI implementations
     \item Recommendation for future opportunities in AI development
     \item Recognition for innovative RAG application development
+\end{itemize}
+
+\section{Learning Resources and References}
+
+\subsection{Courses and Educational Platforms}
+
+\subsubsection{DeepLearning.AI Courses}
+\begin{itemize}
+    \item \textbf{DeepLearning.AI Course Catalog:} \url{https://www.deeplearning.ai/courses/} - Comprehensive AI and machine learning courses
+    \item \textbf{LangChain: Chat with Your Data:} \url{https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/} - Specialized course on building RAG systems with LangChain
+    \item \textbf{Certificate Achievement:} Successfully completed advanced courses with official certification from DeepLearning.AI platform (Certificate link: \url{https://www.linkedin.com/posts/activity-7357329747783139328-gDZ0})
+\end{itemize}
+
+\subsubsection{Specialized AI Training Programs}
+\begin{itemize}
+    \item \textbf{Week 2: Prompting and Prompt Engineering:} \url{https://areganti.notion.site/Week-2-Prompting-and-Prompt-Engineering-57cd1d024ac24819a0c44830a514c41d} - Advanced prompt engineering techniques
+    \item \textbf{5-Day GenAI Challenge - Kaggle:} \url{https://www.kaggle.com/learn-guide/5-day-genai} - Intensive practical GenAI learning
+    \item \textbf{Applied LLMs Mastery 2024:} \url{https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/free_courses/Applied_LLMs_Mastery_2024} - Comprehensive LLM application guide
+    \item \textbf{Prompting Guide:} \url{https://www.promptingguide.ai/} - Complete reference for prompt engineering best practices
+\end{itemize}
+
+\subsection{Research Papers and Academic Resources}
+
+\subsubsection{Healthcare AI Applications}
+\begin{itemize}
+    \item \textbf{"Harnessing the Power of Language Models for Intelligent Digital Health Services":} \url{https://www.researchgate.net/publication/385502563_Harnessing_the_Power_of_Language_Models_for_Intelligent_Digital_Health_Services} - Research on LLM applications in healthcare domain
+\end{itemize}
+
+\subsubsection{Cybersecurity Applications}
+\begin{itemize}
+    \item \textbf{"Building a Cybersecurity-focused RAG Chatbot":} \url{https://mrferlanda.medium.com/building-a-cybersecurity-focused-rag-chatbot-10cc06fa41db} - Domain-specific RAG implementation for cybersecurity
+\end{itemize}
+
+\subsection{Technical Implementation Guides}
+
+\subsubsection{RAG System Development}
+\begin{itemize}
+    \item \textbf{"Build Your Own AI Chatbot: A Beginner's Guide to RAG and LangChain":} \url{https://medium.com/@suraj_bansal/build-your-own-ai-chatbot-a-beginners-guide-to-rag-and-langchain-0189a18ec401} - Practical RAG implementation tutorial
+    \item \textbf{"How to Build a Retrieval-Augmented Generation Chatbot" - Anaconda:} \url{https://www.anaconda.com/blog/how-to-build-a-retrieval-augmented-generation-chatbot} - Enterprise-level RAG development guide
+    \item \textbf{"Build an LLM RAG Chatbot With LangChain" - Real Python:} \url{https://realpython.com/build-llm-rag-chatbot-with-langchain/} - Comprehensive Python-based RAG tutorial
+\end{itemize}
+
+\subsection{Learning Outcomes from External Resources}
+
+\subsubsection{Course Completion Achievements}
+The study of these comprehensive resources resulted in:
+\begin{itemize}
+    \item \textbf{Certified completion} of DeepLearning.AI specialized courses
+    \item \textbf{Advanced understanding} of prompt engineering methodologies
+    \item \textbf{Domain-specific expertise} in healthcare and cybersecurity AI applications
+    \item \textbf{Practical implementation skills} from multiple tutorial sources
+    \item \textbf{Research-backed knowledge} from academic publications
+\end{itemize}
+
+\subsubsection{Knowledge Integration}
+These external learning resources were successfully integrated into the internship project through:
+\begin{itemize}
+    \item Application of advanced prompt engineering techniques in RAG system
+    \item Implementation of best practices from industry tutorials
+    \item Integration of research findings into system architecture
+    \item Adoption of professional development methodologies
+    \item Continuous learning approach throughout the internship period
 \end{itemize}
 
 \section{Conclusion}
